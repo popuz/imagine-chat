@@ -20,7 +20,7 @@ export * from '@dcl/sdk'
 // Base
 createGLTF({ scale: { x: 2, y: 1, z: 1 } }, 'models/baseDarkWithCollider.glb')
 
-const createTotem = (realm: string, transform: Partial<TransformType>) => {
+const createTotem = (realmName: string, transform: Partial<TransformType>) => {
   const screenBody = createGLTF(transform, 'models/screen.glb')
 
   // Screen
@@ -42,7 +42,7 @@ const createTotem = (realm: string, transform: Partial<TransformType>) => {
 
   Material.setPbrMaterial(screen, {
     texture: Material.Texture.Common({ src: 
-      'https://hackathon-server-lac.vercel.app/showImage'}),
+      `https://hackathon-server-lac.vercel.app/getRealmImage?realmName=${realmName}`}),
     emissiveIntensity: 0.6,
     roughness: 1.0
   })
@@ -53,10 +53,10 @@ const createTotem = (realm: string, transform: Partial<TransformType>) => {
     async () => {
       // change player realm
       await changeRealm({
-        realm
+        realm: realmName
       })
     },
-    { button: InputAction.IA_POINTER, hoverText: `Go to '${realm}' realm` }
+    { button: InputAction.IA_POINTER, hoverText: `Go to '${realmName}' realm` }
   )
 }
 
