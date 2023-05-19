@@ -42,7 +42,7 @@ const createTotem = (realmName: string, transform: Partial<TransformType>) => {
 
   Material.setPbrMaterial(screen, {
     texture: Material.Texture.Common({ src: 
-      `https://hackathon-server-lac.vercel.app/getRealmImage?realmName=${realmName}`}),
+      `https://kuruk.ngrok.dev/getRealmImage?realmName=${realmName}`}),
     emissiveIntensity: 0.6,
     roughness: 1.0
   })
@@ -66,6 +66,6 @@ createTotem(
 )
 
 createTotem(
-  'loki',
+  'heimdallr',
   { position: { x: 16.0, y: 0.0, z: 11.5 }, rotation: Quaternion.fromEulerDegrees(0, 0, 0), scale: { x: 0.25 , y: 0.25, z: 0.25 } }
 )

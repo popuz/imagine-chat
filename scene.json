@@ -52,7 +52,8 @@
     "ALLOW_MEDIA_HOSTNAMES"
   ],
   "allowedMediaHostnames": [
-    "hackathon-server-lac.vercel.app"
+    "kuruk.ngrok.dev",
+    "https://kuruk.ngrok.dev"
   ],
   "featureToggles": {},
   "name": "imagine-chat"
